@@ -43,8 +43,8 @@ namespace GradeBookTests
             // Test weighting works correctly for unweighted gradebooks
             gradeBook.GetType().GetProperty("IsWeighted").SetValue(gradeBook, false);
             Assert.True((double)method.Invoke(gradeBook, new object[] { 'A', StudentType.Standard }) == 4, "`GradeBook.GradeBooks.BaseGradeBook`'s `GetGPA` method weighted a student's grade when the gradebook was not weighted.");
-            Assert.True((double)method.Invoke(gradeBook, new object[] { 'A', StudentType.Honors }) == 4, "`GradeBook.GradeBooks.BaseGradeBook`'s `GetGPA` method weighted a student's grade when the gradebook was not weighted.");
-            Assert.True((double)method.Invoke(gradeBook, new object[] { 'A', StudentType.DualEnrolled }) == 4, "`GradeBook.GradeBooks.BaseGradeBook`'s `GetGPA` method weighted a student's grade when the gradebook was not weighted.");
+            Assert.True((double)method.Invoke(gradeBook, new object[] { 'A', StudentType.Honors }) == 5, "`GradeBook.GradeBooks.BaseGradeBook`'s `GetGPA` method weighted a student's grade when the gradebook was not weighted.");
+            Assert.True((double)method.Invoke(gradeBook, new object[] { 'A', StudentType.DualEnrolled }) == 5, "`GradeBook.GradeBooks.BaseGradeBook`'s `GetGPA` method weighted a student's grade when the gradebook was not weighted.");
         }
     }
 }
